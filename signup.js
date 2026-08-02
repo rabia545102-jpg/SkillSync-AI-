@@ -1,4 +1,4 @@
-alert("signup.js loaded");
+
 document.addEventListener("DOMContentLoaded", function () {
 
     const form = document.getElementById("signupForm");
