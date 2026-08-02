@@ -245,11 +245,12 @@ function findMatch() {
         `;
     });
 }
-
 function requestSession(name) {
 
     localStorage.setItem("matchedTutor", name);
 
     alert("✅ Session request sent to " + name + " successfully!");
+
+    window.location.href = "agreement.html";
 
 }
