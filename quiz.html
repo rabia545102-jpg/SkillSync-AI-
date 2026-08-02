@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skill Assessment Quiz</title>
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0 0 60px 0;
+    min-height: 100vh;
+    background: linear-gradient(180deg, #7b2ff7 0%, #4a3fd6 35%, #2b2e8c 70%, #1b1f5c 100%);
+    color: #fff;
+  }
+
+  .topbar {
+    background: rgba(255,255,255,0.12);
+    margin: 20px;
+    border-radius: 16px;
+    padding: 22px;
+    text-align: center;
+    backdrop-filter: blur(4px);
+  }
+
+  .topbar .brand {
+    font-size: 28px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  #quizTitle {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 800;
+    margin: 10px 20px 24px 20px;
+  }
+
+  .question {
+    background: #fff;
+    color: #222;
+    border-radius: 14px;
+    padding: 20px 22px;
+    margin: 0 20px 18px 20px;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+  }
+
+  .question h2 {
+    font-size: 17px;
+    margin: 0 0 14px 0;
+    color: #2b2e8c;
+  }
+
+  .question label {
+    display: block;
+    padding: 10px 12px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+
+  .question label:hover {
+    background: #f0edff;
+  }
+
+  .question input[type="radio"] {
+    margin-right: 10px;
+  }
+
+  .submit-wrap {
+    text-align: center;
+    margin: 28px 20px 0 20px;
+  }
+
+  #submitBtn {
+    background: #f1f1f5;
+    color: #1b1f5c;
+    border: none;
+    padding: 16px 32px;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  }
+
+  #submitBtn:hover {
+    background: #e2e2ea;
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">🧠 SkillSync AI</div>
+</div>
+
+<h1 id="quizTitle">Skill Assessment</h1>
+
+<div id="questionsContainer"></div>
+
+<div class="submit-wrap">
+  <button id="submitBtn" onclick="submitQuiz()">🚀 Submit Assessment</button>
+</div>
+
+<script src="quiz.js"></script>
+</body>
+</html>

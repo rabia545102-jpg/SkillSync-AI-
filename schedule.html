@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Smart Scheduling | SkillSync AI</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">
+<i class="fa-solid fa-brain"></i>
+SkillSync AI
+</div>
+
+<ul>
+<li><a href="dashboard.html">Dashboard</a></li>
+<li><a href="matching.html">Back</a></li>
+</ul>
+
+</nav>
+
+<section class="dashboard">
+
+<h1>📅 Smart Scheduling</h1>
+
+<div class="card">
+
+<h2>Select Your Preferred Schedule</h2>
+
+<br>
+
+<label><b>Select Day</b></label>
+
+<select id="day">
+
+<option>Monday</option>
+<option>Tuesday</option>
+<option>Wednesday</option>
+<option>Thursday</option>
+<option>Friday</option>
+<option>Saturday</option>
+<option>Sunday</option>
+
+</select>
+
+<br><br>
+
+<label><b>Select Time</b></label>
+
+<select id="time">
+
+<option>09:00 AM - 10:00 AM</option>
+<option>10:00 AM - 11:00 AM</option>
+<option>02:00 PM - 03:00 PM</option>
+<option>04:00 PM - 05:00 PM</option>
+<option>06:00 PM - 07:00 PM</option>
+<option>07:00 PM - 08:00 PM</option>
+
+</select>
+
+<br><br>
+
+<label><b>Learning Mode</b></label>
+
+<select id="mode">
+
+<option>Online</option>
+<option>Offline</option>
+
+</select>
+
+<br><br>
+
+<button class="login-btn" onclick="confirmSession()">
+    <i class="fa-solid fa-calendar-check"></i>
+    Confirm Session
+</button>
+
+
+</div>
+
+</section>
+
+<script>
+
+function confirmSession() {
+
+    const schedule = {
+        day: document.getElementById("day").value,
+        time: document.getElementById("time").value,
+        mode: document.getElementById("mode").value
+    };
+
+    localStorage.setItem("schedule", JSON.stringify(schedule));
+
+    alert(
+        "✅ Session Scheduled Successfully!\n\n" +
+        "📅 Day: " + schedule.day +
+        "\n🕒 Time: " + schedule.time +
+        "\n💻 Mode: " + schedule.mode
+    );
+
+    window.location.href = "agreement.html";
+}
+
+</script>
+
+</body>
+</html>

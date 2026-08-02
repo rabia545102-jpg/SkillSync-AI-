@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Create Account | SkillSync AI</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+<body>
+
+<nav>
+
+<div class="logo">
+<i class="fa-solid fa-brain"></i>
+SkillSync AI
+</div>
+
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="login.html">Login</a></li>
+</ul>
+
+</nav>
+
+<section class="login-page">
+
+<div class="login-box">
+
+<h1>Create Account 🚀</h1>
+
+<p>Join India's AI-powered Skill Exchange Platform</p>
+
+<form id="signupForm">
+
+<div class="input-box">
+<i class="fa-solid fa-user"></i>
+<input type="text" id="name" placeholder="Full Name" required>
+</div>
+
+<div class="input-box">
+<i class="fa-solid fa-envelope"></i>
+<input type="email" id="email" placeholder="Email Address" required>
+</div>
+
+<div class="input-box">
+<i class="fa-solid fa-phone"></i>
+<input type="tel" id="phone" placeholder="Phone Number" required>
+</div>
+
+<div class="input-box">
+<i class="fa-solid fa-graduation-cap"></i>
+<input type="text" id="college" placeholder="College Name" required>
+</div>
+
+<div class="input-box">
+<i class="fa-solid fa-book"></i>
+<input type="text" id="branch" placeholder="Branch / Department" required>
+</div>
+
+<!-- Skills I Can Teach -->
+<div class="input-box">
+    <i class="fa-solid fa-code"></i>
+    <select id="teach" required>
+        <option value="">Skills I Can Teach</option>
+        <option>Java</option>
+        <option>Python</option>
+        <option>C++</option>
+        <option>HTML</option>
+        <option>CSS</option>
+        <option>JavaScript</option>
+        <option>Artificial Intelligence</option>
+        <option>Machine Learning</option>
+        <option>Web Development</option>
+    </select>
+</div>
+
+<!-- Skills I Want to Learn -->
+<div class="input-box">
+    <i class="fa-solid fa-lightbulb"></i>
+    <select id="learn" required>
+        <option value="">Skills I Want to Learn</option>
+        <option>Java</option>
+        <option>Python</option>
+        <option>C++</option>
+        <option>HTML</option>
+        <option>CSS</option>
+        <option>JavaScript</option>
+        <option>Artificial Intelligence</option>
+        <option>Machine Learning</option>
+        <option>Web Development</option>
+    </select>
+</div>
+
+<!-- Password -->
+<div class="input-box">
+    <i class="fa-solid fa-lock"></i>
+    <input type="password" id="password"
+    placeholder="Password" required>
+</div>
+
+<!-- Confirm Password -->
+<div class="input-box">
+    <i class="fa-solid fa-lock"></i>
+    <input type="password" id="confirmPassword"
+    placeholder="Confirm Password" required>
+</div>
+
+<!-- Create Account Button -->
+<button type="submit" class="login-btn">
+    <i class="fa-solid fa-user-plus"></i>
+    Create Account
+</button>
+
+<div class="bottom-text">
+    Already have an account?
+    <a href="login.html">login</a>
+</div>
+
+</form>
+
+</div>
+
+</section>
+
+<script src="auth.js"></script>
+<script src="signup.js"></script>
+
+</body>
+</html>

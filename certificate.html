@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AI Verified Certificate | SkillSync AI</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">
+<i class="fa-solid fa-brain"></i>
+SkillSync AI
+</div>
+
+</nav>
+
+<section class="dashboard">
+
+<div class="certificate" id="certificate">
+
+<h3>🏆 AI VERIFIED CERTIFICATE</h3>
+
+<h1>CERTIFICATE OF COMPLETION</h1>
+
+<p>This certificate is proudly presented to</p>
+
+<h2 id="studentName"></h2>
+
+<p>for successfully completing the</p>
+
+<h2 id="skillName"></h2>
+
+<p><b>SkillSync AI - AI Powered Skill Exchange Platform</b></p>
+
+<br>
+
+<p><b>Project Evaluation Score:</b> 95%</p>
+
+<p><b>Status:</b> ✅ AI Verified & Approved</p>
+
+<p><b>Certificate ID:</b> <span id="certificateId"></span></p>
+
+<p><b>Date:</b> <span id="date"></span></p>
+
+<br>
+
+<div class="signatures">
+
+<div>
+<b>AI Evaluation System</b>
+<hr>
+</div>
+
+<div>
+<b>SkillSync AI Team</b>
+<hr>
+</div>
+
+</div>
+
+<br><br>
+
+<button class="login-btn" onclick="downloadCertificate()">
+<i class="fa-solid fa-download"></i>
+Download Certificate
+</button>
+
+<br><br>
+
+<button class="login-btn" onclick="logout()">
+<i class="fa-solid fa-right-from-bracket"></i>
+Logout
+</button>
+
+</div>
+
+</section>
+
+<!-- Load html2pdf FIRST -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+<script>
+
+const user = JSON.parse(localStorage.getItem("loggedInUser"));
+
+if(user){
+
+document.getElementById("studentName").textContent = user.name;
+document.getElementById("skillName").textContent = user.learn;
+
+}else{
+
+document.getElementById("studentName").textContent = "Student";
+document.getElementById("skillName").textContent = "Selected Skill";
+
+}
+
+document.getElementById("date").textContent =
+new Date().toLocaleDateString();
+
+document.getElementById("certificateId").textContent =
+"SSAI-" + Math.floor(100000 + Math.random() * 900000);
+function downloadCertificate(){
+
+    if(typeof html2pdf === "undefined"){
+        alert("html2pdf library is not loaded.");
+        return;
+    }
+
+    const element = document.getElementById("certificate");
+
+    const options = {
+        margin: 0.5,
+        filename: "SkillSync_AI_Certificate.pdf",
+        image: {
+            type: "jpeg",
+            quality: 1
+        },
+        html2canvas: {
+            scale: 2
+        },
+        jsPDF: {
+            unit: "in",
+            format: "a4",
+            orientation: "landscape"
+        }
+    };
+
+    html2pdf().set(options).from(element).save()
+    .then(function(){
+        alert("✅ Certificate downloaded successfully!");
+    })
+    .catch(function(error){
+        alert("❌ Download failed.");
+        console.error(error);
+    });
+
+}
+function logout(){
+
+localStorage.removeItem("loggedInUser");
+
+alert("✅ Logged Out Successfully!");
+
+window.location.href="index.html";
+
+}
+
+</script>
+
+</body>
+</html>

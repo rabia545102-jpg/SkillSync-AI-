@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Skill Matching | SkillSync AI</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+<body>
+
+
+<section class="dashboard">
+
+<h1>🤖 AI Skill Matching</h1>
+
+<div class="card">
+
+<h2>Your Profile</h2>
+
+<p><strong>Name:</strong> <span id="name"></span></p>
+<p><strong>Can Teach:</strong> <span id="teach"></span></p>
+<p><strong>Wants to Learn:</strong> <span id="learn"></span></p>
+
+<br>
+
+<button class="login-btn" onclick="findMatch()">
+Find Best Match
+</button>
+
+</div>
+
+<br>
+
+<div class="card" id="result" style="display:none;">
+
+<h2>🎯 Matches Found</h2>
+
+<div id="matchList"></div>
+
+</div>
+
+</section>
+
+<script src="auth.js"></script>
+<script src="matching.js"></script>
+</body>
+</html>

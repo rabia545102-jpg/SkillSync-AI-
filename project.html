@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Project Submission | SkillSync AI</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">
+<i class="fa-solid fa-brain"></i>
+SkillSync AI
+</div>
+
+<ul>
+<li><a href="dashboard.html">Dashboard</a></li>
+<li><a href="tracker.html">Back</a></li>
+</ul>
+
+</nav>
+
+<section class="dashboard">
+
+<h1>💻 Final Project Submission</h1>
+
+<div class="card">
+
+<h2>Project Details</h2>
+
+<br>
+
+<label><b>Project Title</b></label>
+
+<input type="text" id="title"
+placeholder="Enter Project Title">
+
+<br><br>
+
+<label><b>Project Description</b></label>
+
+<textarea id="description"
+placeholder="Describe your project"></textarea>
+
+<br><br>
+
+<label><b>GitHub Repository Link</b></label>
+
+<input type="url" id="github"
+placeholder="https://github.com/username/project">
+
+<br><br>
+
+<label><b>Live Demo Link (Optional)</b></label>
+
+<input type="url" id="demo"
+placeholder="https://yourproject.netlify.app">
+
+<br><br>
+
+<label><b>Upload Project Report (PDF)</b></label>
+
+<input type="file" id="report"
+accept=".pdf">
+
+<br><br>
+
+<button class="login-btn"
+onclick="submitProject()">
+
+🚀 Submit Project
+
+</button>
+
+</div>
+
+</section>
+
+<script>
+
+function submitProject(){
+
+let title=document.getElementById("title").value;
+
+let description=document.getElementById("description").value;
+
+let github=document.getElementById("github").value;
+
+if(title==""||description==""||github==""){
+
+alert("Please fill all required fields.");
+
+return;
+
+}
+
+alert("🤖 AI is evaluating your project...\n\n✅ Project Approved!");
+
+localStorage.setItem("projectStatus","Approved");
+
+window.location.href="evaluation.html";
+
+}
+
+</script>
+
+</body>
+</html>

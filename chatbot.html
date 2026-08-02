@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SkillSync AI Assistant</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">
+<i class="fa-solid fa-brain"></i>
+SkillSync AI
+</div>
+
+</nav>
+
+<section class="dashboard">
+
+<h1>🤖 AI Learning Assistant</h1>
+
+<div class="card">
+
+<div id="chatBox">
+
+<p class="bot">
+👋 Hello! I'm SkillSync AI.
+How can I help you today?
+</p>
+
+</div>
+
+<div class="input-box">
+
+<input
+type="text"
+id="message"
+placeholder="Ask anything...">
+
+</div>
+
+<br>
+
+<button class="login-btn"
+onclick="sendMessage()">
+
+Send
+
+</button>
+
+</div>
+
+</section>
+
+<script>
+
+function sendMessage(){
+
+let msg=document.getElementById("message").value;
+
+if(msg=="") return;
+
+let chat=document.getElementById("chatBox");
+
+chat.innerHTML+=
+"<p><b>You:</b> "+msg+"</p>";
+
+let reply="";
+
+if(msg.toLowerCase().includes("java")){
+
+reply="Practice Java OOP concepts and collections.";
+
+}
+
+else if(msg.toLowerCase().includes("python")){
+
+reply="Practice Python functions, loops and dictionaries.";
+
+}
+
+else if(msg.toLowerCase().includes("html")){
+
+reply="Focus on semantic HTML and forms.";
+
+}
+
+else if(msg.toLowerCase().includes("css")){
+
+reply="Practice Flexbox and Grid layouts.";
+
+}
+
+else if(msg.toLowerCase().includes("ai")){
+
+reply="Start with Machine Learning fundamentals.";
+
+}
+
+else{
+
+reply="Keep learning consistently. You're doing great!";
+
+}
+
+chat.innerHTML+=
+"<p class='bot'><b>AI:</b> "+reply+"</p>";
+
+document.getElementById("message").value="";

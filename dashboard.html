@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dashboard | SkillSync AI</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">
+<i class="fa-solid fa-brain"></i>
+SkillSync AI
+</div>
+
+<ul>
+<li><a href="profile.html">Profile</a></li>
+<li><a href="matching.html">AI Match</a></li>
+<li><a href="assessment.html">Assessment</a></li>
+<li><a href="#" onclick="logout()">Logout</a></li>
+</ul>
+
+</nav>
+
+<section class="dashboard">
+
+<h1>Welcome, <span id="userName"></span> 👋</h1>
+
+<div class="dashboard-grid">
+
+<div class="card">
+<i class="fa-solid fa-user fa-2x"></i>
+<h2>My Profile</h2>
+<p>View your personal information.</p>
+<button class="login-btn" onclick="location.href='profile.html'">
+Open
+</button>
+</div>
+
+<div class="card">
+<i class="fa-solid fa-code fa-2x"></i>
+<h2>Skills I Teach</h2>
+<p id="teachSkill"></p>
+</div>
+
+<div class="card">
+<i class="fa-solid fa-lightbulb fa-2x"></i>
+<h2>Skills I Learn</h2>
+<p id="learnSkill"></p>
+</div>
+
+<div class="card">
+<i class="fa-solid fa-robot fa-2x"></i>
+<h2>AI Assessment</h2>
+<p>Check your teaching skills.</p>
+<button class="login-btn" onclick="location.href='assessment.html'">
+Start
+</button>
+</div>
+
+<div class="card">
+<i class="fa-solid fa-user-group fa-2x"></i>
+<h2>AI Matching</h2>
+<p>Find the best learning partner.</p>
+<button class="login-btn" onclick="location.href='matching.html'">
+Find Match
+</button>
+</div>
+
+<div class="card">
+<i class="fa-solid fa-award fa-2x"></i>
+<h2>Certificate</h2>
+<p id="certificateStatus">Not Issued</p>
+</div>
+
+</div>
+
+</section>
+
+<script>
+
+let user = JSON.parse(localStorage.getItem("loggedInUser"));
+
+if(!user){
+
+alert("Please login first.");
+
+window.location.href="login.html";
+
+}
+
+document.getElementById("userName").innerHTML = user.name;
+document.getElementById("teachSkill").innerHTML = user.teach;
+document.getElementById("learnSkill").innerHTML = user.learn;
+
+if(user.certificate){
+
+document.getElementById("certificateStatus").innerHTML = user.certificate;
+
+}
+
+function logout(){
+
+localStorage.removeItem("loggedInUser");
+
+alert("Logged Out Successfully!");
+
+window.location.href="login.html";
+
+}
+
+</script>
+
+</body>
+</html>

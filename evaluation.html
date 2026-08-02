@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AI Evaluation | SkillSync AI</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">
+<i class="fa-solid fa-brain"></i> SkillSync AI
+</div>
+
+</nav>
+
+<section class="dashboard">
+
+<h1>🤖 AI Project Evaluation</h1>
+
+<div class="card">
+
+<h2>Analyzing Your Project...</h2>
+
+<div class="progress-container">
+
+<div id="progressBar"></div>
+
+</div>
+
+<h1 id="percent">0%</h1>
+
+</div>
+
+<div class="card" id="report" style="display:none;">
+
+<h2>📊 AI Evaluation Report</h2>
+
+<p>✅ Code Quality <span>94%</span></p>
+
+<p>✅ UI / UX Design <span>97%</span></p>
+
+<p>✅ Functionality <span>95%</span></p>
+
+<p>✅ Documentation <span>92%</span></p>
+
+<p>✅ Innovation <span>98%</span></p>
+
+<hr>
+
+<h2 style="color:#00ff99;">
+🎉 Overall Score : 95%
+</h2>
+
+<h3 style="color:#00ff99;">
+✔ Project Approved
+</h3>
+
+<button class="login-btn"
+onclick="window.location.href='certificate.html'">
+
+Generate Certificate
+
+</button>
+
+</div>
+
+</section>
+
+<script>
+
+
+  let progress = 0;
+
+let bar = document.getElementById("progressBar");
+let percent = document.getElementById("percent");
+let report = document.getElementById("report");
+
+let loading = setInterval(function () {
+
+    progress++;
+
+    bar.style.width = progress + "%";
+    percent.innerHTML = progress + "%";
+
+    if (progress >= 100) {
+
+        clearInterval(loading);
+
+        report.style.display = "block";
+
+    }
+
+}, 40);
+
+</script>

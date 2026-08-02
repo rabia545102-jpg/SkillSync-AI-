@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Digital Agreement | SkillSync AI</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">
+<i class="fa-solid fa-brain"></i>
+SkillSync AI
+</div>
+
+<ul>
+<li><a href="dashboard.html">Dashboard</a></li>
+</ul>
+
+</nav>
+
+<section class="dashboard">
+
+<h1>📜 Digital Learning Agreement</h1>
+
+<div class="card">
+
+<h2>📜 Terms & Conditions</h2>
+
+<p>✅ I agree to attend all scheduled learning sessions on time.</p>
+
+<p>✅ I will respect my learning partner and maintain professional behavior.</p>
+
+<p>✅ I understand that once the learning program begins, I should not discontinue or withdraw without informing my learning partner and the platform.</p>
+
+<p>✅ I will complete all assigned learning activities and the final project honestly.</p>
+
+<p>✅ I understand that the verified certificate will be issued only after successful project evaluation.</p>
+
+<p>✅ I agree to follow the platform's guidelines throughout the entire learning journey.</p>
+<br>
+
+<label>
+
+<input type="checkbox" id="agree">
+
+I have read and accept all the terms.
+
+</label>
+
+<br><br>
+
+<label><b>Digital Signature</b></label>
+
+<input type="text"
+id="signature"
+placeholder="Type Your Full Name">
+
+<br><br>
+
+<button class="login-btn"
+onclick="acceptAgreement()">
+
+Accept & Continue
+
+</button>
+
+</div>
+
+</section>
+
+<script>
+
+function acceptAgreement(){
+
+let agree=document.getElementById("agree");
+
+let signature=document.getElementById("signature").value;
+
+if(!agree.checked){
+
+alert("Please accept the agreement.");
+
+return;
+
+}
+
+if(signature==""){
+
+alert("Please enter your digital signature.");
+
+return;
+
+}
+
+localStorage.setItem("agreementAccepted","Yes");
+
+localStorage.setItem("signature",signature);
+
+alert("✅ Agreement Accepted Successfully!");
+
+window.location.href="tracker.html";
+
+}
+
+</script>
+
+</body>
+</html>
